@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+* {   
+    font-family: 'Lato', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 span {
+    color: #242424;
+    text-align: center;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+p {
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    transition: opacity 300ms ease;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+li {
+    list-style-type: none;
+}
+
+.flex-1 {
+   flex: 1; 
+}
+
+.flex {
+   display: flex 
+}
+
+.container {
+    padding: 50px 0;
+}
+
+.row {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+.text--purple {
+    color: #6030b1;
+}
+
+section:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.section_title {
+    margin-bottom: 20px;
+}
+
+/*NAVIGATION BAR*/
+
+nav {
+    height: 100px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items:center;
+    padding: 0 12px;
+}
+
+.nav__link--list {
+    display:flex;
+}
+
+.nav__link--anchor {
+    margin: 0 12px;
+    color: #242424;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav__link--anchor-primary {
+    background-color: #6030b1;
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: white;
+}
+
+.nav__link--anchor-primary:hover {
+    background-color: #5d3eff;
+    transition:all 350ms ease;
+}
+
+.personal__logo {
+    font-size: 24px;
+    color: #6030b1;
+    margin: 0 12px;
+    font-weight: bold;
+}
+
+/*ABOUT ME*/
+#about-me {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.about-me__info {
+    display:flex;
+    flex-direction: column;
+
+}
+
+.about-me__info--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-me__picture--mask {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    animation: animate-profile-picture 800ms 200ms backwards;
+}
+
+@keyframes animate-profile-picture {
+    0% {
+      transform: scale(0);  
+    }
+    80% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.about-me__picture {
+    width: 100%;
+}
+
+.about-me__info--title {
+    margin-bottom: 16px;
+    animation: fade-up 650ms 400ms backwards;
+}
+
+.about-me__info--para {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    animation: fade-up 650ms 600ms backwards;
+}
+
+.about-me__link {
+    font-size: 20px;
+    color: #242424;
+    text-decoration: none;
+    padding: 0 16px;
+    animation: fade-up 650ms 800ms backwards;
+}
+
+.about-me__links {
+    animation: fade-up 650ms 800ms backwards;
+}
+
+.about-me__links {
+    margin-bottom: 15px;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-me__img--container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.about-me__img {
+    width: 100%;
+    margin-left: 5px;
+    animation: fade-in 1200ms 800ms backwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.wave {
+    display: inline-block;
+    animation: animate-wave 600ms infinite ease-in-out;
+}
+
+@keyframes animate-wave {
+    0% {
+        transform: rotate (0);
+    }
+    50% {
+        transform: rotate(30deg);
+        }
+    100% {
+        transform: rotate(0);
+    }
+}
+/*Tech-stack */
+
+.language__img {
+    width: 100%;
+    max-width: 100px;
+}
+
+.language:hover .language__img {
+    filter: brightness(80%);
+    opacity: 0.86;
+    transform: scale(0.9);
+    transition: all 350ms ease;
+}
+
+.language {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.language__img--wrapper {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 16px;
+}
+
+.language__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+   
+}
+
+.language__name {
+    position:absolute;
+    bottom: 0;
+    transform: scale(0);
+    font-size: 25px;
+}
+.language:hover .language__name {
+    transform: scale(1);
+    transition: all 350ms;
+    opacity: 1;
+}
+
+/*PROJECTS*/
+.projects {
+    margin-bottom: 135px;
+}
+
+.projects:last-child {
+    margin-bottom: 40px;
+}
+
+.project__img {
+    width:100%;
+    transition: all 500ms ease;
+}
+
+.projects__wrapper {
+    display: flex;
+    box-shadow:  0 20px 80px rgba(0, 0, 0, 0.45);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.projects__wrapper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1c1d25;
+    opacity: 0;  
+    transition: all 450ms ease;
+    z-index: 2;
+}
+
+.projects:hover .projects__wrapper:before {
+    opacity: 0.7;
+}
+
+.projects:hover .project__img {
+    transform: scale(1.07);
+    filter: blur(5px);
+}
+
+/*This is where I struggled with Text description coming after hover part 1- opacity is 1 here*/
+.projects:hover .project__description {
+    opacity:1;
+    transform: translateY(-50%);
+}
+/*This is where I struggled with Text description coming after hover part 1 -opacity is 1 here*/
+
+.projects__list {
+    padding-top: 30px;
+}
+
+/*This is where I struggled with Text description coming after hover part 2* - opacity is 0 here */
+.project__description {
+    position: absolute;
+    top: 50%;
+    left: 90px;
+    transform: translateY(100%);
+    max-width: 550px;
+    z-index: 3;
+    opacity: 0;
+    transition: transform 450ms, opacity 300ms;
+}
+/*This is where I struggled with Text description coming after hover part 2 opacity is 0 here*/
+
+.project__description--title,
+.project__description--subtitle,
+.project__description--paragraph {
+    text-align: left;
+    color: #fff;
+}
+
+.project__description--title {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.project__description--subtitle {
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+
+.footer__logo--img {
+    width: 105px;
+    height: 85px;
+}
+
+.footer__social--list {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 35px; 
+}
+
+.footer__row {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8% 0; 
+}
+
+.footer__social--link, .footer__copyright {
+    color:black;
+}
+
+.footer__logo--popper {
+    color: black;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+.footer__anchor {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.footer__anchor:hover .footer__logo--popper {
+    transform: translateX(60px);
+    opacity: 1;
+}
+/* Small phones, tablets, large smartphones */
+@media (max-width: 768px) {
+    nav {
+        height: 68px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .about-me__info--para {
+        font-size: 18px;
+    }
+    
+    .language {
+        width: calc(100% / 2);
+    }
+
+    .project__description--paragraph {
+       font-size: 12px; 
+    }
+
+    .project__description {
+        padding-right: 30px;
+        left: 30px;
+    }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+ .nav__link:not(:last-child) {
+    display:none;
+ }
+
+ .project__description--paragraph{
+     display:none;
+ }
+}
+
